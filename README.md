@@ -4,6 +4,6 @@ A tiny server, demonstrating use of reactor and threadpool pattern in server pro
 Server structure is based on puma gem, default server of Rails 5.  
 
 Run `scrip/run.rb` to start server   
-Use `curl localhost:3000` to make a demo request, if request succeeds, "hello" will be returned.  
+Use `curl localhost:3000` to make a demo request, if request succeeds, "Hello" will be returned.  
 
  

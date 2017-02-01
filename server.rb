@@ -5,8 +5,6 @@ require './reactor'
 require './thread_pool'
 
 module TinyPuma
-  Thread::abort_on_exception = true
-
   class Server
     def run
       socket = ::TCPServer.new("127.0.0.1", 3000)
@@ -14,7 +12,7 @@ module TinyPuma
 
       @threadpool = TinyPuma::ThreadPool.new(1,10) do |client|
         sleep(1)
-        client.response("OK")
+        client.response("Hello")
       end
 
       @reactor = TinyPuma::Reactor.new(@threadpool)
@@ -35,4 +33,5 @@ module TinyPuma
   end
 end
 
+Thread::abort_on_exception = true
 TinyPuma::Server.new.run

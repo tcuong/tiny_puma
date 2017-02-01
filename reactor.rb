@@ -4,6 +4,7 @@ module TinyPuma
       @threadpool = threadpool
       @mutex = Mutex.new
       @sockets = []
+
       Thread.new do
         while true
           if @sockets.size > 0
